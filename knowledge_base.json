@@ -1,0 +1,12 @@
+{
+  "questions": [
+    {
+      "question": "Hello",
+      "answer": "Hi, I'm Pandabot, How can i help you?"
+    },
+    {
+      "question": "hey",
+      "answer": "Hi"
+    }
+  ]
+}
