@@ -1,3 +1,4 @@
+
 import torch
 import json
 from difflib import get_close_matches
@@ -9,7 +10,6 @@ def load_knowledge_base(file_path: str) -> dict:
     with open(file_path, 'r') as file:
         data: dict = json.load(file)
     return data
-
 
 def save_knowledge_base(file_path :str, data: dict):
     with open(file_path, 'w') as file:
@@ -25,7 +25,7 @@ def get_answer_for_question(question: str, knowledge_base: dict, model, tokenize
             return q["answer"]
 
     # If the question is not found in the knowledge base, use the NLP model
-    inputs = tokenizer.encode_plus(question, knowledge_base["questions"], add_special_tokens=True, return_tensors="pt", pad_to_max_length=True)
+    inputs = tokenizer.encode_plus(question, return_tensors="pt", add_special_tokens=True, pad_to_max_length=True)
     input_ids = inputs["input_ids"].tolist()[0]
 
     with torch.no_grad():
