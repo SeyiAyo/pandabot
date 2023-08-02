@@ -1,3 +1,4 @@
+import torch
 import json
 from difflib import get_close_matches
 from transformers import BertTokenizer, BertForQuestionAnswering
