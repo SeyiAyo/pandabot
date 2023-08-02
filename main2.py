@@ -1,5 +1,3 @@
-!pip install torch json difflib
-!pip install transformers
 import torch
 import json
 from difflib import get_close_matches
