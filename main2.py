@@ -20,7 +20,7 @@ def save_knowledge_base(file_path :str, data: dict):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=2)
 
-def get_answer_for_question(question: str, model: BertForQuestionAnswering, tokenizer: BertTokenizer) -> str | None:
+def get_answer_for_question(question: str, model: BertForQuestionAnswering, tokenizer: BertTokenizer) -> Union[str, None]:
     encoding = tokenizer(question, return_tensors="pt")
     input_ids = encoding["input_ids"]
     attention_mask = encoding["attention_mask"]
