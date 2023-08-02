@@ -4,6 +4,7 @@ import json
 import torch
 from transformers import BertTokenizer, BertForQuestionAnswering
 from difflib import get_close_matches
+from typing import List, Union
 
 
 def find_best_match(user_question: str, questions: List[str]) -> Union[str, None]:
